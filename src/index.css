@@ -1,0 +1,78 @@
+/* 1. Use a more intuitive box model and strip default margins/padding */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Prevent font scaling orientation changes and set baseline smooth rendering */
+html {
+  color-scheme: light dark;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+/* 3. Set core body defaults: full viewport height, smooth typography, and layout flexibility */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* 4. Ensure the React root element spans the full height */
+#root {
+  min-height: 100vh;
+  isolation: isolate; /* Create a new stacking context for React modals/portals */
+}
+
+/* 5. Modern media defaults - prevent images and media from overflowing */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls to avoid browser overrides */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* 7. Avoid text overflow on long headings/paragraphs */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Remove list styles when using ul/ol without role="list" */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 9. Improve interactive elements */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
